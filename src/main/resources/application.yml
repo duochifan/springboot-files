@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: files
+  thymeleaf:
+    cache: false
+    suffix: .html
+    prefix: classpath:/templates/
+    encoding: utf-8
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/files?characterEncoding=utf-8
+    username: root
+    password: 123456
+
+
+server:
+  servlet:
+    context-path: /files
+  port: 8989
+
+mybatis:
+  mapper-locations: classpath:/com/yjh/mapper/*.xml
+  type-aliases-package: com.yjh.entity
+
+logging:
+  level:
+    root: info
+    com.yjh.dao: debug
